@@ -639,7 +639,7 @@ fi # end Expert if
 if [ $doInstallESDE == true ]; then
 	echo "ESDE: Yes" &>> ~/emudeck/emudeck.log
 	echo -e "${BOLD}${installString} EmulationStation Desktop Edition${NONE}"
-	curl https://gitlab.com/leonstyhre/emulationstation-de/-/package_files/34287334/download --output "$toolsPath"/EmulationStation-DE-x64_SteamDeck.AppImage >> ~/emudeck/emudeck.log
+	curl https://gitlab.com/leonstyhre/emulationstation-de/-/raw/master/es-app/assets/latest_steam_deck_appimage.txt | tail -n1 | xargs -I _ curl _ --output "$toolsPath"/EmulationStation-DE-x64_SteamDeck.AppImage >> ~/emudeck/emudeck.log
 	chmod +x "$toolsPath"/EmulationStation-DE-x64_SteamDeck.AppImage	
 fi
 
